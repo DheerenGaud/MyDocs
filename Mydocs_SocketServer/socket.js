@@ -87,7 +87,3 @@ io.on("connection",(socket)=>{
 server.listen(8080,()=>{
     console.log("Socket server is listen on port 8080")
 })
-module.exports = {
-  server,
-  io,
-};
