@@ -1,5 +1,6 @@
 import axios from "axios"
-const url="http://localhost:9000"
+
+const url=process.env.BACKEND_URL;
 
 export const newuser= async(data)=>{
     console.log(data)
