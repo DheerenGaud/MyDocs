@@ -17,7 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 import "../style/bell.css";
-const socket =io.connect("http://localhost:8080")
+const socket =io.connect(process.env.SOCKET_URL)
 export default () => {
   useEffect(() => {
     lodeData();

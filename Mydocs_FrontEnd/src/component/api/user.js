@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const url=process.env.BACKEND_URL;
+const url=process.env.BACKEND_URL
 
 export const newuser= async(data)=>{
     console.log(data)

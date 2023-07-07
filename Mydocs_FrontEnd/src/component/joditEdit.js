@@ -7,7 +7,7 @@ import io from "socket.io-client"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const socket =io.connect("http://localhost:8080")
+const socket =io.connect(process.env.SOCKET_URL)
 
 const MyEditor = () => {
 
