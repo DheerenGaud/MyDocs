@@ -2,10 +2,13 @@ const express= require("express")
 const {Server}=require("socket.io")
 const cors=require("cors")
 const http =require("http")
+require("dotenv").config();
 
 
 const app= express();
 const server=http.createServer(app);
+const port=process.env.PORT || 8080
+
 
 app.use(cors())
 
@@ -25,7 +28,7 @@ const getUser =(userId)=>{
 }
 const io=new Server(server,{
    cors:{
-    origin: 'http://localhost:3000',
+    origin: process.env.FRONT_LINK,
     methods: ['GET','POST'],
    }
 })
@@ -84,6 +87,6 @@ io.on("connection",(socket)=>{
 
 
 
-server.listen(8080,()=>{
+server.listen(port,()=>{
     console.log("Socket server is listen on port 8080")
 })

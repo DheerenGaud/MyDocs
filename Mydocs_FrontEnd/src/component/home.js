@@ -15,13 +15,14 @@ import {
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import "../homecss/style.css";
+
 import "../style/bell.css";
 const socket =io.connect("http://localhost:8080")
 export default () => {
   useEffect(() => {
     lodeData();
   }, []);
+
   const [query, setQuery] = useState("");
   useEffect(() => {
     search();
@@ -67,7 +68,6 @@ export default () => {
      
       setNotifCount(x.data.data.notifCount);
     } else {
-      
       toast.error(x.data.data)
       window.location.href = "/login";
     }

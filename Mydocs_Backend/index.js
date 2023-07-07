@@ -12,30 +12,21 @@ const Project = require("./model/project");
 const connected = require("./db/db");
 require("dotenv").config();
 
+const port=process.env.PORT || 9000
 
 app = express();
 
 
-app.use(cors({ origin: "http://localhost:3000", methods: ["GET", "POST"] }));
+app.use(cors({ origin: process.env.FRONT_LINK, methods: ["GET", "POST"] }));
 app.use(express.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
-// const connected = async () => {
-//   try {
-//     await mongoose.connect("mongodb://0.0.0.0:27017/Authentication", {
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true,
-//     });
-//     console.log("database is connected...");
-//   } catch (error) {
-//     console.log("some error in connecting database");
-//   }
-// };
 
 
 connected();
 
 app.use("/user", Router);
+
 app.use("/project", Router2);
 
 app.post("/login-user", async (req, res) => {
@@ -114,7 +105,7 @@ app.post("/userData", async (req, res) => {
   }
 });
 
-app.listen(9000,()=>{
+app.listen(port,()=>{
   console.log(" server is listen on port 9000")
 })
 

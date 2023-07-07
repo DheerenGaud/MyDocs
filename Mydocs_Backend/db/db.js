@@ -7,7 +7,6 @@ const connected =async ()=>{
     mongoose.connect(process.env.DB_LINK,{
         useNewUrlParser: true,
         useUnifiedTopology: true,
-
        }).then(()=>{
         console.log("Db Sucessfully connected..")
     }).catch((err)=>{
