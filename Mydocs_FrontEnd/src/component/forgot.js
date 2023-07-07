@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 export default (params) => {
   const [data, setData] = useState({
     email: "",
-    redirecrURL:"http://localhost:3000/user/resetPassword"
+    redirecrURL:`${process.env.FRONEND_URL}/user/resetPassword`
   });
   const navigate=useNavigate()
 
